@@ -1,0 +1,42 @@
+* { 
+    margin: 0; 
+    padding: 0;
+}
+
+body { 
+    font-family:'Montserrat' sans-serif;
+
+}
+
+/* Nav Bar */
+
+nav { 
+    display: flex;
+    background-color: pink;
+    justify-content: space-around;
+    /* padding: 20 px 0; */
+    color: whitesmoke;
+    height: 50px;
+    align-items: center;
+
+}
+nav .logo { 
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px;
+}
+
+nav ul {        
+    display:flex;
+    list-style:none; 
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul li a { 
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+nav ul li a:hover { 
+    color: skyblue;
+}
