@@ -1,42 +1,117 @@
-* { 
-    margin: 0; 
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body { 
-    font-family:'Montserrat' sans-serif;
-
+body {
+  font-family: "Montserrat" sans-serif;
 }
 
 /* Nav Bar */
 
-nav { 
+nav {
+  display: flex;
+  background-color: pink;
+  justify-content: space-around;
+  /* padding: 20 px 0; */
+  color: whitesmoke;
+  height: 50px;
+  align-items: center;
+}
+nav .logo {
+  font-family: "Pacifico", cursive;
+  letter-spacing: 3px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: skyblue;
+}
+
+/* Hambuger Menu  */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -6px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Hambuger Animation */
+
+.menu-toggle span:nth-child(2) {
+  background: white;
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  background-color: white;
+  transform-origin: 0 100%;
+}
+
+/* Di Bawah ini merupakan sesuatu yang penting nih  */
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* Responsive BreakPoint */
+
+/* Ukuran Tablet */
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+
+/* Ukuan Mobile */
+
+@media screen and (max-width: 576px) {
+  .menu-toggle {
     display: flex;
-    background-color: pink;
-    justify-content: space-around;
-    /* padding: 20 px 0; */
-    color: whitesmoke;
-    height: 50px;
-    align-items: center;
-
-}
-nav .logo { 
-    font-family: 'Pacifico', cursive;
-    letter-spacing: 3px;
-}
-
-nav ul {        
-    display:flex;
-    list-style:none; 
-    width: 40%;
-    justify-content: space-between;
-}
-
-nav ul li a { 
-    color: whitesmoke;
-    text-decoration: none;
-}
-
-nav ul li a:hover { 
-    color: skyblue;
+  }
+  nav ul {
+    display: none;
+  }
 }
